@@ -15,7 +15,7 @@ def downloadjsondata():
 if __name__ == '__main__':
     data = downloadjsondata()
     df = pd.DataFrame(json.loads(data))
-    lang = st.sidebar.selectbox(label='Filter by language', options=['all','es','pt','ar'])
+    lang = st.sidebar.selectbox(label='Filter by language', options=['all','en','es','pt','ar'])
     df.drop_duplicates(subset='title', inplace=True)
     if lang != 'all':
         df = df[df.language==lang]
